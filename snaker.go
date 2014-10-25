@@ -1,3 +1,5 @@
+// Package snaker provides methods to convert CamelCase names to snake_case and back.
+// It considers the list of allowed initialsms used by github.com/golang/lint/golint (e.g. ID or HTTP)
 package snaker
 
 import (
