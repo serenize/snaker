@@ -57,9 +57,11 @@ func SnakeToCamel(s string) string {
 			continue
 		}
 
-		w := []rune(word)
-		w[0] = unicode.ToUpper(w[0])
-		result += string(w)
+		if len(word) > 0 {
+			w := []rune(word)
+			w[0] = unicode.ToUpper(w[0])
+			result += string(w)
+		}
 	}
 
 	return result

@@ -7,6 +7,10 @@ import (
 
 var _ = Describe("Snaker", func() {
 	Describe("CamelToSnake test", func() {
+		It("should return an empty string on an empty input", func() {
+			Expect(CamelToSnake("")).To(Equal(""))
+		})
+
 		It("should work with one word", func() {
 			Expect(CamelToSnake("One")).To(Equal("one"))
 		})
@@ -50,6 +54,14 @@ var _ = Describe("Snaker", func() {
 	})
 
 	Describe("SnakeToCamel test", func() {
+		It("should return an empty string on an empty input", func() {
+			Expect(SnakeToCamel("")).To(Equal(""))
+		})
+
+		It("should not blow up on trailing _", func() {
+			Expect(SnakeToCamel("potato_")).To(Equal("Potato"))
+		})
+
 		It("should return a snaked text as camel case", func() {
 			Expect(SnakeToCamel("this_has_to_be_uppercased")).To(
 				Equal("ThisHasToBeUppercased"))
