@@ -80,7 +80,7 @@ func startsWithInitialism(s string) string {
 }
 
 // commonInitialisms, taken from
-// https://github.com/golang/lint/blob/3d26dc39376c307203d3a221bada26816b3073cf/lint.go#L482
+// https://github.com/golang/lint/blob/32a87160691b3c96046c0c678fe57c5bef761456/lint.go#L702
 var commonInitialisms = map[string]bool{
 	"API":   true,
 	"ASCII": true,
@@ -102,9 +102,12 @@ var commonInitialisms = map[string]bool{
 	"RPC":   true,
 	"SLA":   true,
 	"SMTP":  true,
+	"SQL":   true,
 	"SSH":   true,
+	"TCP":   true,
 	"TLS":   true,
 	"TTL":   true,
+	"UDP":   true,
 	"UI":    true,
 	"UID":   true,
 	"UUID":  true,
@@ -113,4 +116,6 @@ var commonInitialisms = map[string]bool{
 	"UTF8":  true,
 	"VM":    true,
 	"XML":   true,
+	"XSRF":  true,
+	"XSS":   true,
 }
