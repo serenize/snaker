@@ -79,4 +79,35 @@ var _ = Describe("Snaker", func() {
 			Expect(SnakeToCamel("id")).To(Equal("ID"))
 		})
 	})
+
+	Describe("SnakeToCamelLower test", func() {
+		It("should return an empty string on an empty input", func() {
+			Ω(SnakeToCamelLower("")).To(Equal(""))
+		})
+
+		It("should not blow up on trailing _", func() {
+			Ω(SnakeToCamelLower("potato_")).To(Equal("potato"))
+		})
+
+		It("should return a snaked text as camel case", func() {
+			Ω(SnakeToCamelLower("this_has_to_be_uppercased")).To(
+				Equal("thisHasToBeUppercased"))
+		})
+
+		It("should return a snaked text as camel case, except the word ID", func() {
+			Ω(SnakeToCamelLower("this_is_an_id")).To(Equal("thisIsAnID"))
+		})
+
+		It("should return 'id' not as uppercase", func() {
+			Ω(SnakeToCamelLower("this_is_an_identifier")).To(Equal("thisIsAnIdentifier"))
+		})
+
+		It("should simply work with id", func() {
+			Ω(SnakeToCamelLower("id")).To(Equal("id"))
+		})
+
+		It("should simply work with leading id", func() {
+			Ω(SnakeToCamelLower("id_me_please")).To(Equal("idMePlease"))
+		})
+	})
 })
