@@ -9,6 +9,8 @@ go:
 # Disable version go:1.8
 jobs:
   exclude:
+    - arch: amd64
+      go: 1.8
     - arch: ppc64le
       go: 1.8
 
