@@ -10,6 +10,6 @@ go:
 jobs:
   exclude:
     - arch: ppc64le
-      go:1.8
+      go: 1.8
 
 install: go get -t -d -v ./... && go build -v ./...
