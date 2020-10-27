@@ -6,5 +6,10 @@ go:
   - 1.8
   - 1.9
   - tip
+# Disable version go:1.8
+jobs:
+  exclude:
+    - arch: ppc64le
+      go:1.8
 
 install: go get -t -d -v ./... && go build -v ./...
